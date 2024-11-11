@@ -1,5 +1,6 @@
 # Backend SIAMO
 Backend del apliacativo móvil SIAMO para el curso de Desarrollo de Sistemas Móviles
+Nota: Desde el pgAdmin cambiar las variable Money por Numeric
 
 ## Integrantes
 - Paul Santillan
