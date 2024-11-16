@@ -15,8 +15,8 @@ class PersonaSchema(ma.Schema):
 persona_schema = PersonaSchema()
 
 class PersonaDetailSchema(ma.Schema):
-  tipo_doc = fields.Boolean()
-  num_doc = fields.String()
+  # tipo_doc = fields.Boolean()
+  # num_doc = fields.String()
   nombres = fields.String()
   apellidos = fields.String()
   

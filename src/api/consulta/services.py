@@ -3,7 +3,7 @@ from flask_jwt_extended import jwt_required
 from .models import Consulta
 from src.common.utils.db import db
 from src.common.utils.data import data
-from .schema import consulta_schema, consulta_detail_schema
+from .schema import consulta_schema, consulta_detail_schema, consultas_detail_schema
 
 consulta = Blueprint('consulta', __name__)
 
@@ -40,3 +40,8 @@ def get_consulta_details(id):
     return make_response(jsonify({'message': 'Consulta no encontrada'}), 404)
   
   return make_response(jsonify(consulta_detail_schema.dump(consulta)), 200)
+
+@consulta.route('/get/all', methods=['GET'])
+def get_all_consultas():
+  consultas = Consulta.query.all()
+  return make_response(jsonify(consultas_detail_schema.dump(consultas, many=True)), 200)
