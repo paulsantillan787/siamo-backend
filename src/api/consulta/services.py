@@ -41,7 +41,7 @@ def get_consulta_details(id):
   
   return make_response(jsonify(consulta_detail_schema.dump(consulta)), 200)
 
-@consulta.route('/get/all', methods=['GET'])
-def get_all_consultas():
-  consultas = Consulta.query.all()
+@consulta.route('/get/all/<int:id_tecnico>', methods=['GET'])
+def get_all_consultas(id_tecnico):
+  consultas = Consulta.query.filter_by(id_tecnico=id_tecnico).all()
   return make_response(jsonify(consultas_detail_schema.dump(consultas, many=True)), 200)
