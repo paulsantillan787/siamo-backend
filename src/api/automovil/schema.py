@@ -11,7 +11,7 @@ class AutomovilSchema(ma.Schema):
 automovil_schema = AutomovilSchema()
 
 class AutomovilDetailSchema(ma.Schema):
-  # placa = fields.String()
+  placa = fields.String()
   marca = fields.String()
   modelo = fields.String()
   
