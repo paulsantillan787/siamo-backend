@@ -1,12 +1,14 @@
 from src.common.utils.ma import ma
 from marshmallow import fields
+from src.api.persona.schema import PersonaSchema, PersonaDetailSchema
 
 class EmpleadoSchema(ma.Schema):
   id_empleado = fields.Integer()
-  fecha_ingreso = fields.Date()
-  cod_empleado = fields.Integer()
-  contrasenia = fields.String()
+  # fecha_ingreso = fields.Date()
+  # cod_empleado = fields.Integer()
+  # contrasenia = fields.String()
   id_persona = fields.Integer()
+  persona = fields.Nested(PersonaDetailSchema)
   
 empleado_schema = EmpleadoSchema()
 

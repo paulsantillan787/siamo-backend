@@ -1,15 +1,17 @@
 from src.common.utils.ma import ma
 from marshmallow import fields
-from src.api.empleado.schema import empleado_detail_schema
+from src.api.empleado.schema import EmpleadoDetailSchema, EmpleadoSchema
 
 class TecnicoSchema(ma.Schema):
   id_tecnico = fields.Integer()
-  id_empleado = fields.Integer()
+  # id_empleado = fields.Integer()
+  empleado = fields.Nested(EmpleadoSchema)
   
 tecnico_schema = TecnicoSchema()
+tecnicos_schema = TecnicoSchema(many=True)
 
 class TecnicoDetailSchema(ma.Schema):
   id_empleado = fields.Integer()
-  empleado = fields.Nested(empleado_detail_schema)
+  empleado = fields.Nested(EmpleadoDetailSchema)
   
 tecnico_detail_schema = TecnicoDetailSchema()

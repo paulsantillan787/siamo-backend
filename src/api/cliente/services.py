@@ -28,7 +28,10 @@ def insert_cliente():
 
 @cliente.route('/get/<string:num_doc>', methods=['GET'])
 def get_cliente(num_doc):
-  cliente = Cliente.query.filter_by(num_doc=num_doc).first()
+  persona = Persona.query.filter_by(num_doc=num_doc).first()
+  if not persona:
+    return make_response(jsonify({'message': 'Persona no encontrada'}), 404)
+  cliente = Cliente.query.filter_by(id_persona=persona.id_persona).first()
   if not cliente:
     return make_response(jsonify({'message': 'Cliente no encontrado'}), 404)
   

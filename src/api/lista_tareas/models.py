@@ -13,5 +13,5 @@ class ListaTareas(db.Model):
   tarea = db.relationship('Tarea', backref='lista_tareas', cascade = 'all, delete-orphan',lazy=True)
   
   def __init__(self, id_ost):
-    self.id_lista_tareas = uuid4().int
+    # self.id_lista_tareas = uuid4().int
     self.id_ost = id_ost

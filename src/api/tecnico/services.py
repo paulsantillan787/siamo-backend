@@ -3,7 +3,7 @@ from flask_jwt_extended import jwt_required
 from .models import Tecnico
 from src.common.utils.db import db
 from src.common.utils.data import data
-from .schema import tecnico_schema, tecnico_detail_schema
+from .schema import tecnico_schema, tecnico_detail_schema, tecnicos_schema
 
 tecnico = Blueprint('tecnico', __name__)
 
@@ -40,3 +40,11 @@ def get_tecnico_details(id):
     return make_response(jsonify({'message': 'Tecnico no encontrado'}), 404)
   
   return make_response(jsonify(tecnico_detail_schema.dump(tecnico)), 200)
+
+@tecnico.route('/get/all', methods=['GET'])
+def get_all_tecnicos():
+  tecnicos = Tecnico.query.all()
+  if not tecnicos:
+    return make_response(jsonify({'message': 'No hay tecnicos'}), 404)
+        
+  return make_response(jsonify(tecnicos_schema.dump(tecnicos)), 200)

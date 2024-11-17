@@ -47,3 +47,34 @@ def get_persona_details(id):
     return make_response(jsonify({'message': 'Persona no encontrada'}), 404)
   
   return make_response(jsonify(persona_detail_schema.dump(persona)), 200)
+
+@persona.route('/update/<int:id>', methods=['PUT'])
+def update_persona(id):
+  persona = Persona.query.filter_by(id_persona=id).first()
+  if not persona:
+    return make_response(jsonify({'message': 'Persona no encontrada'}), 404)
+  
+  data = request.get_json()
+  tipo_doc = data['tipo_doc']
+  num_doc = data['num_doc']
+  nombres = data['nombres']
+  apellidos = data['apellidos']
+  direccion = data['direccion']
+  sexo = data['sexo']
+  telefono = data['telefono']
+  correo = data['correo']
+  
+  if not tipo_doc or not num_doc or not nombres or not apellidos or not direccion or not sexo or not telefono or not correo:
+    return make_response(jsonify({'message': 'Faltan datos'}), 400)
+  
+  persona.tipo_doc = tipo_doc
+  persona.num_doc = num_doc
+  persona.nombres = nombres
+  persona.apellidos = apellidos
+  persona.direccion = direccion
+  persona.sexo = sexo
+  persona.telefono = telefono
+  persona.correo = correo
+  db.session.commit()
+  
+  return make_response(jsonify({'message': 'Persona actualizada'}), 200)

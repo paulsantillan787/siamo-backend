@@ -4,9 +4,9 @@
   "settings": {
     "width": 3000,
     "height": 3000,
-    "scrollTop": -76,
-    "scrollLeft": -1457,
-    "zoomLevel": 1,
+    "scrollTop": -297.3919,
+    "scrollLeft": -1369.3548,
+    "zoomLevel": 0.91,
     "show": 511,
     "database": 16,
     "databaseName": "",
@@ -157,7 +157,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1731198587074,
+          "updateAt": 1731793649721,
           "createAt": 1728596047554
         }
       },
@@ -179,7 +179,7 @@
           "iBOTsQcxnhAhi-1iM3Sbl"
         ],
         "ui": {
-          "x": 1127.4389,
+          "x": 1130.1787,
           "y": 516.4032,
           "zIndex": 11,
           "widthName": 60,
@@ -187,7 +187,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1729983304326,
+          "updateAt": 1731813838238,
           "createAt": 1728596072441
         }
       },
@@ -774,19 +774,19 @@
         "id": "vv5BudGUNPZZyVK19992M",
         "tableId": "ujgOSYnDYR2UAfM3SIvlG",
         "name": "tipo_doc",
-        "comment": "true: dni, false: carnet extranjería",
-        "dataType": "boolean",
+        "comment": "1: dni, 2: carnet extranjería",
+        "dataType": "int",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
-          "widthComment": 173,
+          "widthComment": 141,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1729453430261,
+          "updateAt": 1731815810034,
           "createAt": 1728597217636
         }
       },
@@ -795,18 +795,18 @@
         "tableId": "ujgOSYnDYR2UAfM3SIvlG",
         "name": "num_doc",
         "comment": "",
-        "dataType": "varchar(8)",
+        "dataType": "varchar(11)",
         "default": "",
         "options": 12,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 60,
+          "widthDataType": 61,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1729898659224,
+          "updateAt": 1731815817872,
           "createAt": 1728597241969
         }
       },
@@ -1814,7 +1814,7 @@
         "id": "kn7d3lvWsMCP_aNS9c6Jq",
         "tableId": "YJkSaWp3sW8nIz8lc9xOo",
         "name": "estado",
-        "comment": "0: en proceso, 1: resuelto, 2: cancelado, 3: abandonado",
+        "comment": "1: en proceso, 2: resuelto, 3: cancelado, 4: abandonado",
         "dataType": "int",
         "default": "",
         "options": 8,
@@ -1826,7 +1826,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1729982737286,
+          "updateAt": 1731815853155,
           "createAt": 1728684862070
         }
       },
@@ -2154,9 +2154,9 @@
         "id": "hJHjgoO7QA7VA1hTKnLLK",
         "tableId": "m1kKGcBfELxHs3JWk31dr",
         "name": "estado",
-        "comment": "0: en espera, 1: cancelado, 2: procede",
+        "comment": "1: en espera, 2: cancelado, 3: procede",
         "dataType": "int",
-        "default": "0",
+        "default": "1",
         "options": 8,
         "ui": {
           "keys": 0,
@@ -2166,7 +2166,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1729978140946,
+          "updateAt": 1731815836838,
           "createAt": 1729899383086
         }
       },
@@ -2295,7 +2295,7 @@
         "tableId": "YY4Ymm-IU6aTiT64pQb20",
         "name": "precio",
         "comment": "",
-        "dataType": "money",
+        "dataType": "float",
         "default": "",
         "options": 8,
         "ui": {
@@ -2306,7 +2306,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1729900631870,
+          "updateAt": 1731815889513,
           "createAt": 1729900593856
         }
       },
@@ -2335,7 +2335,7 @@
         "tableId": "e_FVioB9xa0eyKe8n_qxM",
         "name": "tarifa_mano_obra",
         "comment": "segun n tecnicos y complejidad",
-        "dataType": "money",
+        "dataType": "float",
         "default": "",
         "options": 8,
         "ui": {
@@ -2346,7 +2346,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1729902559448,
+          "updateAt": 1731815878666,
           "createAt": 1729900682305
         }
       },
@@ -2355,7 +2355,7 @@
         "tableId": "e_FVioB9xa0eyKe8n_qxM",
         "name": "tarifa_repuestos",
         "comment": "",
-        "dataType": "money",
+        "dataType": "float",
         "default": "0",
         "options": 8,
         "ui": {
@@ -2366,7 +2366,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1729900918492,
+          "updateAt": 1731815882823,
           "createAt": 1729900808304
         }
       },
@@ -2775,7 +2775,7 @@
         "tableId": "e_FVioB9xa0eyKe8n_qxM",
         "name": "descuento_negociado",
         "comment": "",
-        "dataType": "money",
+        "dataType": "float",
         "default": "0",
         "options": 8,
         "ui": {
@@ -2786,7 +2786,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1729985091338,
+          "updateAt": 1731815884182,
           "createAt": 1729978236756
         }
       },
@@ -2835,7 +2835,7 @@
         "tableId": "C-tR074Zv3AfKWGmk7eec",
         "name": "saldo_final",
         "comment": "",
-        "dataType": "money",
+        "dataType": "float",
         "default": "",
         "options": 8,
         "ui": {
@@ -2846,7 +2846,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1729979488411,
+          "updateAt": 1731815900531,
           "createAt": 1729979452724
         }
       },
@@ -3195,7 +3195,7 @@
         "tableId": "y6X9QL6AoZlggd-jqUZRg",
         "name": "precio",
         "comment": "",
-        "dataType": "money",
+        "dataType": "float",
         "default": "",
         "options": 8,
         "ui": {
@@ -3206,7 +3206,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1729983148737,
+          "updateAt": 1731815898845,
           "createAt": 1729982297614
         }
       },
@@ -3322,7 +3322,7 @@
           "columnIds": [
             "ImJb1B0eqOb_z8o8XGneY"
           ],
-          "x": 570,
+          "x": 538,
           "y": 161,
           "direction": 2
         },
@@ -3350,7 +3350,7 @@
           "columnIds": [
             "ImJb1B0eqOb_z8o8XGneY"
           ],
-          "x": 301,
+          "x": 285,
           "y": 297,
           "direction": 8
         },
@@ -3415,7 +3415,7 @@
           "columnIds": [
             "9Ki4_amqt7eYCKP8s-0Ii"
           ],
-          "x": 1127.4389,
+          "x": 1130.1787,
           "y": 542.4032,
           "direction": 1
         },
@@ -3546,7 +3546,7 @@
           "columnIds": [
             "Z-rmcM4qXQaZdk8OVp-3e"
           ],
-          "x": 1555.4389,
+          "x": 1558.1787,
           "y": 568.4032,
           "direction": 2
         },
@@ -3770,7 +3770,7 @@
           "columnIds": [
             "Z-rmcM4qXQaZdk8OVp-3e"
           ],
-          "x": 1127.4389,
+          "x": 1130.1787,
           "y": 594.4032,
           "direction": 1
         },
@@ -4274,9 +4274,9 @@
       -1,
       {
         "name": 1728597239515,
-        "dataType": 1729374793354,
+        "dataType": 1731815785499,
         "options(notNull)": 1728679299058,
-        "comment": 1729453430258
+        "comment": 1731815810033
       }
     ],
     "QNSK-dKAaUMUKs1afvOj1": [
@@ -4285,7 +4285,7 @@
       -1,
       {
         "name": 1728597244715,
-        "dataType": 1729374741869,
+        "dataType": 1731815817871,
         "options(notNull)": 1728679299835,
         "options(unique)": 1729898659223
       }
@@ -5028,7 +5028,7 @@
         "name": 1728684863954,
         "dataType": 1729981976026,
         "options(notNull)": 1729375301143,
-        "comment": 1729982737285
+        "comment": 1731815853154
       }
     ],
     "K6Ovlr_O4z0E2jzYNsc0-": [
@@ -5246,10 +5246,10 @@
       -1,
       {
         "name": 1729899506927,
-        "comment": 1729978140943,
+        "comment": 1731815836838,
         "dataType": 1729903531784,
         "options(notNull)": 1729899526477,
-        "default": 1729903545961
+        "default": 1731815829886
       }
     ],
     "z9kiXzNvB1PboIhdty99P": [
@@ -5355,7 +5355,7 @@
       {
         "name": 1729900595275,
         "options(notNull)": 1729900617532,
-        "dataType": 1729900631870
+        "dataType": 1731815889512
       }
     ],
     "e_FVioB9xa0eyKe8n_qxM": [
@@ -5384,7 +5384,7 @@
       -1,
       {
         "name": 1729900788801,
-        "dataType": 1729900825615,
+        "dataType": 1731815878666,
         "options(notNull)": 1729900913367,
         "comment": 1729902559447
       }
@@ -5395,7 +5395,7 @@
       -1,
       {
         "name": 1729900813592,
-        "dataType": 1729900827690,
+        "dataType": 1731815882822,
         "options(notNull)": 1729900913968,
         "default": 1729900918467
       }
@@ -5706,7 +5706,7 @@
       -1,
       {
         "name": 1729978242856,
-        "dataType": 1729978246027,
+        "dataType": 1731815884181,
         "options(notNull)": 1729978251559,
         "default": 1729985091337
       }
@@ -5737,7 +5737,7 @@
       -1,
       {
         "name": 1729979455682,
-        "dataType": 1729979467486,
+        "dataType": 1731815900529,
         "options(notNull)": 1729979488410
       }
     ],
@@ -5983,7 +5983,7 @@
       -1,
       {
         "name": 1729982302445,
-        "dataType": 1729983094024,
+        "dataType": 1731815898844,
         "options(notNull)": 1729983148736
       }
     ],
