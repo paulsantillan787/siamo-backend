@@ -7,7 +7,7 @@ Nota: Desde el pgAdmin cambiar las variable Money por Numeric
 - Aracely Rivera
 - Carolina Seminario
 
-## Instrucciones
+## Instrucciones de instalación
 Crear un entorno virtual en python (de preferencia 3.11.0)
 ```
 python -m venv venv
@@ -39,3 +39,6 @@ Correr el archivo app.py
 ```
 python .\app.py
 ```
+
+## Modelo E/R de la base de datos
+![Modelo E/R](siamo_database_v3.png)
