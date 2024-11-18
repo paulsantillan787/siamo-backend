@@ -188,11 +188,12 @@ COMMENT ON COLUMN Persona.sexo IS 'F: femenino, M: masculino';
 
 CREATE TABLE Presupuesto
 (
-  id_presupuesto      int   NOT NULL GENERATED ALWAYS AS IDENTITY,
-  id_consulta         int   NOT NULL,
-  tarifa_mano_obra    float NOT NULL,
-  tarifa_repuestos    float NOT NULL DEFAULT 0,
-  descuento_negociado float NOT NULL DEFAULT 0,
+  id_presupuesto       int   NOT NULL GENERATED ALWAYS AS IDENTITY,
+  id_consulta          int   NOT NULL,
+  n_tecnicos_asignados int   NOT NULL DEFAULT 1,
+  tarifa_mano_obra     float NOT NULL,
+  tarifa_repuestos     float NOT NULL DEFAULT 0,
+  descuento_negociado  float NOT NULL DEFAULT 0,
   PRIMARY KEY (id_presupuesto)
 );
 
@@ -209,7 +210,6 @@ CREATE TABLE Presupuesto_repuesto
 CREATE TABLE Problema
 (
   id_problema int          NOT NULL GENERATED ALWAYS AS IDENTITY,
-  id_solucion int          NOT NULL,
   descripcion varchar(50)  NOT NULL UNIQUE,
   detalle     varchar(250) NOT NULL,
   PRIMARY KEY (id_problema)
@@ -238,6 +238,7 @@ CREATE TABLE Solucion
 (
   id_solucion int          NOT NULL GENERATED ALWAYS AS IDENTITY,
   descripcion varchar(250) NOT NULL,
+  id_problema int          NOT NULL,
   PRIMARY KEY (id_solucion)
 );
 
@@ -312,11 +313,6 @@ ALTER TABLE Lista_problemas
     FOREIGN KEY (id_problema)
     REFERENCES Problema (id_problema);
 
-ALTER TABLE Problema
-  ADD CONSTRAINT FK_Solucion_TO_Problema
-    FOREIGN KEY (id_solucion)
-    REFERENCES Solucion (id_solucion);
-
 ALTER TABLE Presupuesto_repuesto
   ADD CONSTRAINT FK_Presupuesto_TO_Presupuesto_repuesto
     FOREIGN KEY (id_presupuesto)
@@ -376,6 +372,11 @@ ALTER TABLE Consulta
   ADD CONSTRAINT FK_Automovil_TO_Consulta
     FOREIGN KEY (id_automovil)
     REFERENCES Automovil (id_automovil);
+
+ALTER TABLE Solucion
+  ADD CONSTRAINT FK_Problema_TO_Solucion
+    FOREIGN KEY (id_problema)
+    REFERENCES Problema (id_problema);
 
 CREATE UNIQUE INDEX id_persona
   ON Persona (id_persona ASC);
