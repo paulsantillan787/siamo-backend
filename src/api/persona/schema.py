@@ -3,7 +3,7 @@ from marshmallow import fields
 
 class PersonaSchema(ma.Schema):
   id_persona = fields.Integer()
-  tipo_doc = fields.Boolean()
+  tipo_doc = fields.Integer()
   num_doc = fields.String()
   nombres = fields.String()
   apellidos = fields.String()

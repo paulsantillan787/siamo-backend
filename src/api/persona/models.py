@@ -8,8 +8,8 @@ class Persona(db.Model):
   __tablename__ = 'persona'
   
   id_persona = db.Column(db.Integer, primary_key=True)
-  tipo_doc = db.Column(db.Boolean, nullable=False)
-  num_doc = db.Column(db.String(8), nullable=False)
+  tipo_doc = db.Column(db.Integer, nullable=False)
+  num_doc = db.Column(db.String(11), nullable=False)
   nombres = db.Column(db.String(30), nullable=False)
   apellidos = db.Column(db.String(50), nullable=False)
   direccion = db.Column(db.String(100), nullable=False)

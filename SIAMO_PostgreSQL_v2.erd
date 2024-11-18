@@ -4,9 +4,9 @@
   "settings": {
     "width": 3000,
     "height": 3000,
-    "scrollTop": -297.3919,
-    "scrollLeft": -1369.3548,
-    "zoomLevel": 0.91,
+    "scrollTop": -132,
+    "scrollLeft": -321,
+    "zoomLevel": 1,
     "show": 511,
     "database": 16,
     "databaseName": "",
@@ -303,7 +303,7 @@
           "D4Sc9d8G_GxOZpqCgM31Q"
         ],
         "ui": {
-          "x": 32,
+          "x": 33,
           "y": 25,
           "zIndex": 45,
           "widthName": 60,
@@ -311,7 +311,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1728679262859,
+          "updateAt": 1731816755684,
           "createAt": 1728597114447
         }
       },
@@ -3322,7 +3322,7 @@
           "columnIds": [
             "ImJb1B0eqOb_z8o8XGneY"
           ],
-          "x": 538,
+          "x": 539,
           "y": 161,
           "direction": 2
         },
@@ -3350,7 +3350,7 @@
           "columnIds": [
             "ImJb1B0eqOb_z8o8XGneY"
           ],
-          "x": 285,
+          "x": 286,
           "y": 297,
           "direction": 8
         },
@@ -4072,7 +4072,7 @@
       },
       "psD3jJ5E-Zvc_1DrCL2ti": {
         "id": "psD3jJ5E-Zvc_1DrCL2ti",
-        "name": "id_persona",
+        "name": "id_problema",
         "tableId": "pTjQukxUVz0CBhWaQv3s8",
         "indexColumnIds": [
           "-X92SyTACPWWFZnaGLkFF"
@@ -4082,7 +4082,7 @@
         ],
         "unique": true,
         "meta": {
-          "updateAt": 1728680177568,
+          "updateAt": 1731871817328,
           "createAt": 1728680173286
         }
       },
@@ -4912,7 +4912,7 @@
       -1,
       {
         "unique": 1728680173631,
-        "name": 1728680176266
+        "name": 1731871817325
       }
     ],
     "-X92SyTACPWWFZnaGLkFF": [
