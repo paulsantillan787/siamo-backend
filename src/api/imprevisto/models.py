@@ -15,7 +15,7 @@ class Imprevisto(db.Model):
   informe_tecnico = db.relationship('InformeTecnico', backref='imprevisto', cascade = 'all, delete-orphan',lazy=True)
   
   def __init__(self, descripcion, solucion, precio):
-    self.id_imprevisto = uuid4().int
+    # self.id_imprevisto = uuid4().int
     self.descripcion = descripcion
     self.solucion = solucion
     self.precio = precio

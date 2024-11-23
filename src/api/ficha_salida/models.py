@@ -12,6 +12,6 @@ class FichaSalida(db.Model):
   id_ost = db.Column(db.Integer, db.ForeignKey('orden_servicio_tecnico.id_ost'), nullable=False)
   
   def __init__(self, id_ost):
-    self.id_ficha_salida = uuid4().int
+    # self.id_ficha_salida = uuid4().int
     self.fecha_recojo = datetime.now(timezone.utc) - timedelta(hours=5)
     self.id_ost = id_ost

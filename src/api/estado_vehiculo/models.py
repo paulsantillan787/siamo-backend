@@ -15,7 +15,7 @@ class EstadoVehiculo(db.Model):
   id_ficha_ingreso = db.Column(db.Integer, db.ForeignKey('ficha_ingreso.id_ficha_ingreso'), nullable=False)
   
   def __init__(self, estado_carroceria, estado_neumaticos, estado_motor, estado_frenos, id_ficha_ingreso):
-    self.id_estado_vehiculo = uuid4().int
+    # self.id_estado_vehiculo = uuid4().int
     self.estado_carroceria = estado_carroceria
     self.estado_neumaticos = estado_neumaticos
     self.estado_motor = estado_motor

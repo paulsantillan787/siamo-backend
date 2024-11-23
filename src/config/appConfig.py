@@ -5,13 +5,6 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from datetime import timedelta
-# from src.api.user.services import users
-# from src.api.template_test.services import template_tests
-# from src.api.question.services import questions
-# from src.api.alternative.services import alternatives
-# from src.api.clasification.services import clasifications
-# from src.api.test.services import tests
-# from src.api.answer.services import answers
 from src.api.persona.services import persona
 from src.api.empleado.services import empleado
 from src.api.recepcionista.services import recepcionista
@@ -25,6 +18,14 @@ from src.api.consulta.services import consulta
 from src.api.repuesto.services import repuesto
 from src.api.presupuesto.services import presupuesto
 from src.api.presupuesto_respuesto.services import presupuesto_respuesto
+from src.api.estado_vehiculo.services import estado_vehiculo
+from src.api.informe_tecnico.services import informe_tecnico
+from src.api.ficha_ingreso.services import ficha_ingreso
+from src.api.ficha_salida.services import ficha_salida
+from src.api.imprevisto.services import imprevisto
+from src.api.lista_tareas.services import lista_tareas
+from src.api.tarea.services import tarea
+from src.api.ost.services import ost
 
 from dotenv import load_dotenv
 import os
@@ -44,14 +45,6 @@ app.config['JWT_COOKIE_CSRF_PROTECT'] = False
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=int(os.getenv("JWT_ACCESS_TOKEN_EXPIRES")))
 app.config['JWT_REFRESH_TOKEN_EXPIRES'] = timedelta(days=int(os.getenv("JWT_REFRESH_TOKEN_EXPIRES")))
 
-# app.register_blueprint(users, url_prefix='/api/users')
-# app.register_blueprint(template_tests, url_prefix='/api/template_tests')
-# app.register_blueprint(questions, url_prefix='/api/questions')
-# app.register_blueprint(alternatives, url_prefix='/api/alternatives')
-# app.register_blueprint(clasifications, url_prefix='/api/clasifications')
-# app.register_blueprint(tests, url_prefix='/api/tests')
-# app.register_blueprint(answers, url_prefix='/api/answers')
-
 app.register_blueprint(persona, url_prefix='/api/persona')
 app.register_blueprint(empleado, url_prefix='/api/empleado')
 app.register_blueprint(recepcionista, url_prefix='/api/recepcionista')
@@ -65,6 +58,14 @@ app.register_blueprint(consulta, url_prefix='/api/consulta')
 app.register_blueprint(repuesto, url_prefix='/api/repuesto')
 app.register_blueprint(presupuesto, url_prefix='/api/presupuesto')
 app.register_blueprint(presupuesto_respuesto, url_prefix='/api/presupuesto_respuesto')
+app.register_blueprint(estado_vehiculo, url_prefix='/api/estado_vehiculo')
+app.register_blueprint(ficha_ingreso, url_prefix='/api/ficha_ingreso')
+app.register_blueprint(ficha_salida, url_prefix='/api/ficha_salida')
+app.register_blueprint(imprevisto, url_prefix='/api/imprevisto')
+app.register_blueprint(lista_tareas, url_prefix='/api/lista_tareas')
+app.register_blueprint(tarea, url_prefix='/api/tarea')
+app.register_blueprint(ost, url_prefix='/api/ost')
+app.register_blueprint(informe_tecnico, url_prefix='/api/informe_tecnico')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_CONNECTION
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

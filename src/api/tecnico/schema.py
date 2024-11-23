@@ -6,6 +6,7 @@ class TecnicoSchema(ma.Schema):
   id_tecnico = fields.Integer()
   # id_empleado = fields.Integer()
   empleado = fields.Nested(EmpleadoSchema)
+  ost_count = fields.Integer()
   
 tecnico_schema = TecnicoSchema()
 tecnicos_schema = TecnicoSchema(many=True)
