@@ -5,7 +5,7 @@ from src.api.ost.models import OrdenServicioTecnico
 from src.api.consulta.models import Consulta
 from src.api.presupuesto.models import Presupuesto
 from src.api.imprevisto.models import Imprevisto
-from .schema import informe_tecnico_schema
+from .schema import informe_tecnico_schema, informe_tecnico_resumed_schema
 from src.common.utils.db import db
 from src.common.utils.data import data
 from sqlalchemy.orm import joinedload
@@ -55,7 +55,7 @@ def get_informe_tecnico_by_ost(id_ost):
   if not informe_tecnico:
     return make_response(jsonify({'mensaje': 'Informe técnico no encontrado'}), 404)
   
-  return make_response(jsonify(informe_tecnico_schema.dump(informe_tecnico)), 200)
+  return make_response(jsonify(informe_tecnico_resumed_schema.dump(informe_tecnico)), 200)
 
 @informe_tecnico.route('/update/<int:id_informe_tecnico>', methods=['PUT'])
 def insert_imprevisto_to_informe_tecnico(id_informe_tecnico):

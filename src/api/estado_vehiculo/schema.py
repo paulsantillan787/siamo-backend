@@ -8,6 +8,6 @@ class EstadoVehiculoSchema(ma.Schema):
   estado_neumaticos = fields.String()
   estado_motor = fields.String()
   estado_frenos = fields.String()
-  id_ficha_ingreso = fields.Integer()
+  # id_ficha_ingreso = fields.Integer()
   
 estado_vehiculo_schema = EstadoVehiculoSchema()

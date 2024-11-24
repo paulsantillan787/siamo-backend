@@ -2,6 +2,7 @@ from src.common.utils.ma import ma
 from marshmallow import fields
 from src.api.cliente.schema import ClienteDetailSchema
 from src.api.automovil.schema import AutomovilDetailSchema
+from src.api.tecnico.schema import TecnicoDetailSchema
 
 class ConsultaSchema(ma.Schema):
   id_consulta = fields.Integer()
@@ -16,6 +17,7 @@ consulta_schema = ConsultaSchema()
 class ConsultaDetailSchema(ma.Schema):
   cliente = fields.Nested(ClienteDetailSchema)
   automovil = fields.Nested(AutomovilDetailSchema)
+  tecnico = fields.Nested(TecnicoDetailSchema)
   prob_declarado = fields.String()
   estado = fields.Integer()
   

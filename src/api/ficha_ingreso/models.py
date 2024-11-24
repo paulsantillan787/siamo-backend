@@ -12,7 +12,7 @@ class FichaIngreso(db.Model):
   fecha_aprox_recojo = db.Column(db.Date, nullable=False)
   id_ost = db.Column(db.Integer, db.ForeignKey('orden_servicio_tecnico.id_ost'), nullable=False)
   
-  estado_vehiculo = db.relationship('EstadoVehiculo', backref='ficha_ingreso', cascade = 'all, delete-orphan',lazy=True)
+  estado_vehiculo = db.relationship('EstadoVehiculo', backref='ficha_ingreso', cascade = 'all, delete-orphan',lazy=True, uselist=False)
   
   def __init__(self, fecha_aprox_recojo, id_ost):
     # self.id_ficha_ingreso = uuid4().int

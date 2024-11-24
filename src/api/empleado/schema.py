@@ -14,6 +14,12 @@ empleado_schema = EmpleadoSchema()
 
 class EmpleadoDetailSchema(ma.Schema):
   cod_empleado = fields.Integer()
-  contrasenia = fields.String()
+  persona = fields.Nested(PersonaDetailSchema)
   
 empleado_detail_schema = EmpleadoDetailSchema()
+
+class EmpleadoLoginSchema(ma.Schema):
+  cod_empleado = fields.Integer()
+  contrasenia = fields.String()
+
+empleado_login_schema = EmpleadoLoginSchema()

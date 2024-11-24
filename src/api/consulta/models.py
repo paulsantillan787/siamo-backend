@@ -16,7 +16,7 @@ class Consulta(db.Model):
   
   lista_problemas = db.relationship('ListaProblemas', backref='consulta', cascade = 'all, delete-orphan', lazy=True)
   presupuesto = db.relationship('Presupuesto', backref='consulta', cascade = 'all, delete-orphan', lazy=True)
-  # ost = db.relationship('Orden_Servicio_Tecnico', backref='consulta', cascade = 'all, delete-orphan', lazy=True)
+  ost = db.relationship('OrdenServicioTecnico', backref='consulta', cascade = 'all, delete-orphan', lazy=True)
   
   def __init__(self, prob_declarado, estado, id_cliente, id_tecnico, id_automovil):
     # self.id_consulta = uuid4().int
