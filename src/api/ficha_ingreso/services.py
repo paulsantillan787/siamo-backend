@@ -1,7 +1,11 @@
 from flask import Blueprint, request, jsonify, make_response
 from flask_jwt_extended import jwt_required
 from .models import FichaIngreso
+from src.api.ost.models import OrdenServicioTecnico
+from src.api.persona.models import Persona
+from src.api.automovil.models import Automovil
 from .schema import ficha_ingreso_schema
+from .schema import ficha_ingreso_completa_schema
 from src.common.utils.db import db
 from src.common.utils.data import data
 
