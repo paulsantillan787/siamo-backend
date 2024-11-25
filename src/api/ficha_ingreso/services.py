@@ -4,6 +4,7 @@ from .models import FichaIngreso
 from src.api.ost.models import OrdenServicioTecnico
 from src.api.persona.models import Persona
 from src.api.automovil.models import Automovil
+from src.api.consulta.models import Consulta
 from .schema import ficha_ingreso_schema
 from .schema import ficha_ingreso_completa_schema
 from src.common.utils.db import db
