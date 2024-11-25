@@ -10,7 +10,7 @@ class Solucion(db.Model):
   id_solucion = db.Column(db.Integer, primary_key=True)
   descripcion = db.Column(db.String(250), nullable=False)
   
-  problema = db.relationship('Problema', backref='solucion', cascade='all, delete-orphan', lazy=True)
+  problema = db.relationship('Problema', backref='solucion', cascade='all, delete-orphan', lazy=True, uselist=False)
   
   def __init__(self, descripcion):
     # self.id_solucion = uuid4().int

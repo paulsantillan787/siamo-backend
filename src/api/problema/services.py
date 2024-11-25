@@ -3,7 +3,7 @@ from flask_jwt_extended import jwt_required
 from .models import Problema
 from src.common.utils.db import db
 from src.common.utils.data import data
-from .schema import problema_schema, problema_detail_schema, problemas_detail_schema
+from .schema import problema_schema, problema_detail_schema, problemas_detail_schema, problemas_schema
 
 problema = Blueprint('problema', __name__)
 
@@ -45,4 +45,4 @@ def get_problemas():
   if not problemas:
     return make_response(jsonify({'message': 'No hay problemas'}), 404)
   
-  return make_response(jsonify(problemas_detail_schema.dump(problemas)), 200)
+  return make_response(jsonify(problemas_schema.dump(problemas)), 200)

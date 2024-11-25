@@ -8,10 +8,12 @@ class ProblemaSchema(ma.Schema):
   detalle = fields.String()
   
 problema_schema = ProblemaSchema()
+problemas_schema = ProblemaSchema(many=True)
 
 class ProblemaDetailSchema(ma.Schema):
-  descripcion = fields.String()
-  detalle = fields.String()
+  # descripcion = fields.String()
+  # detalle = fields.String()
+  id_problema = fields.Integer()
   solucion = fields.Nested(SolucionSchema)
   
 problema_detail_schema = ProblemaDetailSchema()

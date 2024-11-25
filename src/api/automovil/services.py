@@ -35,7 +35,7 @@ def insert_automovil():
 
 @automovil.route('/get/<int:id>/<string:placa>', methods=['GET'])
 def get_automovil_placa_cliente(id, placa):
-  automovil = Automovil.query.filter_by(id_automovil=id, placa=placa).first()
+  automovil = Automovil.query.filter_by(id_cliente=id, placa=placa).first()
   if not automovil:
     return make_response(jsonify({'message': 'Automovil no encontrado'}), 404)
   

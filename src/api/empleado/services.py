@@ -4,7 +4,9 @@ from src.api.persona.models import Persona
 from .models import Empleado
 from src.common.utils.db import db
 from src.common.utils.data import data
-from .schema import empleado_schema, empleado_detail_schema
+from .schema import empleado_schema, empleado_detail_schema, empleado_login_schema
+from src.api.recepcionista.models import Recepcionista
+from src.api.tecnico.models import Tecnico
 
 empleado = Blueprint('empleado', __name__)
 
@@ -48,3 +50,21 @@ def get_empleado_details(id):
     return make_response(jsonify({'message': 'Empleado no encontrado'}), 404)
   
   return make_response(jsonify(empleado_detail_schema.dump(empleado)), 200)
+
+@empleado.route('/login/<int:codEmpleado>/<string:contrasenia>', methods=['GET'])
+def login_empleado(codEmpleado, contrasenia):
+  empleado = Empleado.query.filter_by(cod_empleado=codEmpleado, contrasenia=contrasenia).first()
+  if not empleado:
+    return make_response(jsonify({'message': 'Empleado no encontrado'}), 404)
+  
+  empleado_data = empleado_login_schema.dump(empleado)
+  if Recepcionista.query.filter_by(id_empleado=empleado.id_empleado).first():
+    empleado_data['tipo_empleado'] = 1
+  elif Tecnico.query.filter_by(id_empleado=empleado.id_empleado).first():
+    empleado_data['tipo_empleado'] = 2
+    empleado_data['id_tecnico'] = Tecnico.query.filter_by(id_empleado=empleado.id_empleado).first().id_tecnico
+  else:
+    return make_response(jsonify({'message': 'Empleado no encontrado'}), 404)
+  
+  return make_response(jsonify(empleado_data), 200)
+  

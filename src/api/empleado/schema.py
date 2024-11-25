@@ -19,7 +19,10 @@ class EmpleadoDetailSchema(ma.Schema):
 empleado_detail_schema = EmpleadoDetailSchema()
 
 class EmpleadoLoginSchema(ma.Schema):
+  id_empleado = fields.Integer()
   cod_empleado = fields.Integer()
   contrasenia = fields.String()
+  id_tecnico = fields.Integer()
+  tipo = fields.Integer()
 
 empleado_login_schema = EmpleadoLoginSchema()
