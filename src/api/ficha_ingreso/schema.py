@@ -10,4 +10,10 @@ class FichaIngresoSchema(ma.Schema):
   
 ficha_ingreso_schema = FichaIngresoSchema()
   
-  
+class FichaIngresoCompletaSchema(ma.Schema):
+    id_ficha_ingreso = fields.Integer()
+    id_ost = fields.Integer()
+    nombre_cliente = fields.String()
+    placa_vehiculo = fields.String()
+
+ficha_ingreso_completa_schema = FichaIngresoCompletaSchema()
