@@ -4,12 +4,12 @@
   "settings": {
     "width": 3000,
     "height": 3000,
-    "scrollTop": -639.2113,
-    "scrollLeft": -1068.0878,
+    "scrollTop": 0,
+    "scrollLeft": 0,
     "zoomLevel": 1,
     "show": 511,
     "database": 16,
-    "databaseName": "",
+    "databaseName": "siamo_database",
     "canvasType": "ERD",
     "language": 1,
     "tableNameCase": 4,
@@ -651,14 +651,14 @@
         ],
         "ui": {
           "x": 149.6732,
-          "y": 871.8523,
+          "y": 872.8523,
           "zIndex": 652,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1729983379769,
+          "updateAt": 1733181803186,
           "createAt": 1729902802838
         }
       },
@@ -2734,19 +2734,19 @@
         "id": "92uR_kiZ7bB05U1qrpPEg",
         "tableId": "cUx72q96pEK_FFbfjR89X",
         "name": "estado",
-        "comment": "",
+        "comment": "0: no terminada, 1: terminada",
         "dataType": "boolean",
         "default": "false",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
-          "widthComment": 60,
+          "widthComment": 157,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1729903101225,
+          "updateAt": 1733181874938,
           "createAt": 1729903090339
         }
       },
@@ -3751,8 +3751,8 @@
           "columnIds": [
             "37V00mwRWb1pZwbytZtU_"
           ],
-          "x": 366.6732,
-          "y": 1047.8523,
+          "x": 415.1732,
+          "y": 1048.8523,
           "direction": 8
         },
         "meta": {
@@ -3779,8 +3779,8 @@
           "columnIds": [
             "if9PvTZmIakk8Y-iizHRp"
           ],
-          "x": 583.6732,
-          "y": 959.8523,
+          "x": 680.6732,
+          "y": 960.8523,
           "direction": 2
         },
         "meta": {
@@ -5678,9 +5678,10 @@
       -1,
       {
         "name": 1729903091978,
-        "dataType": 1729903095629,
+        "dataType": 1733181868980,
         "options(notNull)": 1729903096140,
-        "default": 1729903101224
+        "default": 1733181874938,
+        "comment": 1733181813410
       }
     ],
     "DpBioBojAOoSFhiCn4q6Q": [
@@ -6035,6 +6036,14 @@
       1731198583334,
       1731198587072,
       {}
+    ],
+    "settings.databaseName": [
+      "settings",
+      -1,
+      -1,
+      {
+        "databaseName": 1732567999120
+      }
     ]
   }
 }
